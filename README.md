@@ -11,5 +11,6 @@ The voltage range is 0...60V in the shown configuration.
 
 The LM358 are selected for low offset voltage, it would be better to use special low offset opamps.
 
+There is a PWM output that can b used to control the stepup converter.
 
 
