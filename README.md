@@ -16,6 +16,32 @@ Using this I could measure the MPP curve of my solar panels:
 
 ![Picture](/solar_01.png)
 
+The module mpptrack_xx.py contains a class Measure4pole that allows to use the measuring device as an object.
+This allows MPP tracking and measuring:
 
+```python
+# Define object with or without connected OLED:
+m4p = Measure4pole(adc, pwmgen, oled = oled)
+#m4p = Measure4pole(adc, pwmgen, oled = None)
+
+m4p.set_calibration(k0, k1, k2, k3, offset0, offset1)
+m4p.set_pwm(0.3)
+
+# Track MPP, set PWM accordingly in regular intervals
+# Display values 
+i = 0
+while True:
+    if i % 10 == 0:
+        if oled:
+            oled.print("MPP tracking")
+        m4p.mpp_track()
+        
+    ##i1, i2, v1, v2, p1, p2, eta = m4p.measure()
+    m4p.measure()
+    m4p.print_values()
+    m4p.print_oled()
+    i += 1
+    time.sleep(1)
+```
 
 
