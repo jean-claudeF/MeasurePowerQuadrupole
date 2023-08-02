@@ -44,4 +44,6 @@ while True:
     time.sleep(1)
 ```
 
+A short description of the files is in Micropython/info.txt
+
 
