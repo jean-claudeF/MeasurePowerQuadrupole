@@ -1,0 +1,15 @@
+MEASURE POWER QUADRUPOLE
+
+measureUIP2x_02.py:
+Continuously measure voltage, current and power for input and output
+
+mpptrack_02.py:
+Use device for tracking maximum power point of solar installation
+Track MPP and adjust PWM accordingly
+Display values in loop
+
+measure_power_curve_01.py
+Get values for MPP tracking curve
+
+main.py automatically starts one of these by importing it.
+
